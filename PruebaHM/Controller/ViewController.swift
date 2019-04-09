@@ -28,18 +28,17 @@ class ViewController: UIViewController {
         
     }
     
-    
+    // UI
     func settingsUI(){
         let redColor = UIColor(red: CGFloat(211)/255, green: CGFloat(47)/255, blue: CGFloat(47)/255, alpha: 1.0)
         container.layer.cornerRadius = 16.0
         self.view.backgroundColor = redColor
         signUpOrInButton.backgroundColor = redColor
-        
-        
-        
+        signUpOrInButton.layer.cornerRadius = 16.0
+ 
     }
 
-
+    // Actions
     @IBAction func signUpOrInAction(_ sender: UIButton) {
         
         if let email = emailTextField.text, let password = passwordTextField.text, (email.count > 0 && password.count > 0){

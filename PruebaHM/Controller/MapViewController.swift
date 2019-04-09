@@ -16,23 +16,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var goButton: UIButton!
     
     
     
     var items = [Item]()
-    
-    
-   let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
     var otherLocation = CLLocationCoordinate2D()
+   
     
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingsUI()
         
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -63,6 +61,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    // UI
+    func settingsUI(){
+        let redColor = UIColor(red: CGFloat(211)/255, green: CGFloat(47)/255, blue: CGFloat(47)/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor.darkGray
+        goButton.backgroundColor = redColor
+        goButton.layer.cornerRadius = 16.0
+        goButton.isHidden = true
+        self.collectionView.backgroundColor = UIColor.darkGray
+        
+    }
     
 
     @IBAction func signOut(_ sender: UIBarButtonItem) {
@@ -125,14 +133,22 @@ extension MapViewController : UICollectionViewDelegate, UICollectionViewDataSour
         let item = items[indexPath.row]
         
         cell.titleLabel.text = item.title
+        cell.categoryLabel.text = item.category
         cell.latLabel.text = "Lat: \(item.lat)"
         cell.lonLabel.text = "Lon: \(item.lon)"
-        cell.layer.backgroundColor = UIColor.lightGray.cgColor
-        
         if let imageURL = URL(string: item.imageURL){
             cell.imageView.kf.setImage(with: imageURL)
         }
         
+        // UI
+        cell.layer.backgroundColor = UIColor(red: CGFloat(211)/255, green: CGFloat(47)/255, blue: CGFloat(47)/255, alpha: 1.0).cgColor
+        cell.layer.cornerRadius = 20.0
+        cell.layer.borderColor = UIColor.red.cgColor
+        cell.layer.borderWidth =  2.0
+            
+        
+        
+
         return cell
         
     }
@@ -142,11 +158,22 @@ extension MapViewController : UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         locationManager.stopUpdatingLocation()
-        let item = items[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.white.cgColor
+        collectionView.allowsMultipleSelection = false
+        goButton.isHidden = false
         
+        let item = items[indexPath.row]
         showInMap(item: item)
         
         
+        
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderColor = UIColor.red.cgColor
         
     }
     
@@ -162,14 +189,14 @@ extension MapViewController : UICollectionViewDelegate, UICollectionViewDataSour
         map.removeAnnotations(map.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = otherLocation
-        annotation.title = "Localización"
+        annotation.title = item.title
         map.addAnnotation(annotation)
         
         
         
     }
     
-    
+    // MARK: UICLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let coord = manager.location?.coordinate{

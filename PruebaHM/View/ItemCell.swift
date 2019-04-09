@@ -11,6 +11,7 @@ import UIKit
 class ItemCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var latLabel: UILabel!
