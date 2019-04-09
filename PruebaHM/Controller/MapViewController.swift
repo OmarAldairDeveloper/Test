@@ -18,6 +18,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    
     var items = [Item]()
     
     

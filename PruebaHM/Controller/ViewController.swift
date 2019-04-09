@@ -15,12 +15,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpOrInButton: UIButton!
     @IBOutlet weak var changeModeButton: UIButton!
+    @IBOutlet weak var container: UIView!
+    @IBOutlet weak var infoLabel: UILabel!
     
     var isSignUpMode = true
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsUI()
+        
+        
+    }
+    
+    
+    func settingsUI(){
+        let redColor = UIColor(red: CGFloat(211)/255, green: CGFloat(47)/255, blue: CGFloat(47)/255, alpha: 1.0)
+        container.layer.cornerRadius = 16.0
+        self.view.backgroundColor = redColor
+        signUpOrInButton.backgroundColor = redColor
         
         
         
@@ -68,11 +81,13 @@ class ViewController: UIViewController {
             signUpOrInButton.setTitle("Iniciar sesión", for: .normal)
             changeModeButton.setTitle("Registrarse", for: .normal)
             isSignUpMode = false
+            infoLabel.text = "¿No tienes cuenta?"
             
         }else{
             signUpOrInButton.setTitle("Registrarse", for: .normal)
             changeModeButton.setTitle("Iniciar sesión", for: .normal)
             isSignUpMode = true
+            infoLabel.text = "¿Ya tienes cuenta?"
         }
         
     }
