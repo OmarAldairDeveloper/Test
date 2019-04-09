@@ -11,19 +11,21 @@ import Foundation
 
 class Item{
     
+    var key: String
     var title: String
     var category: String
     var lat: Double
     var lon: Double
     var imageURL: String
     
-    init(title: String, category: String, lat: Double, lon: Double, imageURL: String) {
+    init(title: String, category: String, lat: Double, lon: Double, imageURL: String, key: String) {
         
         self.title = title
         self.category = category
         self.lat = lat
         self.lon = lon
         self.imageURL = imageURL
+        self.key = key
     }
     
 }

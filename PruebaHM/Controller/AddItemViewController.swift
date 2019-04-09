@@ -41,7 +41,7 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func cancelAction(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "newItemToMap", sender: nil)
     }
     
     
@@ -69,9 +69,14 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
                                 
                                 
                                 if let lon = Double(lon), let lat = Double(lat){
-                                    let data : [String:Any] = ["title":title, "category":category, "lon":lon, "lat":lat, "imageURL":imageURL]
                                     
-                                    Database.database().reference().child("Items").childByAutoId().setValue(data) { (error, reference) in
+                                    let reference = Database.database().reference().child("Items").childByAutoId()
+                                    
+                                    let key = reference.key
+                                    
+                                    let data : [String:Any] = ["title":title, "category":category, "lon":lon, "lat":lat, "imageURL":imageURL, "key":key]
+                                    
+                                    reference.setValue(data) { (error, reference) in
                                         
                                         if error != nil{
                                             self.showAlert(title: "Error", message: error!.localizedDescription)

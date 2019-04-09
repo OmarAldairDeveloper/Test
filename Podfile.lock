@@ -74,6 +74,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SwipeCellKit (2.5.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -98,6 +100,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - nanopb
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   Firebase: 02f3281965c075426141a0ce1277e9de6649cab9
@@ -114,7 +117,8 @@ SPEC CHECKSUMS:
   Kingfisher: 07067cfacf371117330dceb4b4b8f5c4b691ab42
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
 
-PODFILE CHECKSUM: e6b2fe6e8151c21b0ec061bf1fd230d81458a51a
+PODFILE CHECKSUM: 95c2fd7d60cfb31e60d55c3f13257386559eebea
 
 COCOAPODS: 1.6.1
