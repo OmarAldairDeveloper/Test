@@ -32,7 +32,7 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             if let snapValue = snapshot.value as? [String:Any]{
                 
-                if let title = snapValue["title"] as? String, let lat = snapValue["lat"] as? Double, let lon = snapValue["lon"] as? Double, let imageURL = snapValue["imageURL"] as? String, let category = snapValue ["category"] as? String, let key = snapValue["key"] as? String{
+                if let title = snapValue["title"] as? String, let lat = snapValue["lat"] as? Double, let lon = snapValue["lon"] as? Double, let imageURL = snapValue["imageURL"] as? String, let category = snapValue["category"] as? String, let key = snapValue["key"] as? String{
                     
                     
                     
@@ -113,6 +113,7 @@ class ItemViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.titleLabel.text = item.title
         cell.latLabel.text = "Lat: \(item.lat)"
         cell.lonLabel.text = "Lon: \(item.lon)"
+        cell.categoryLabel.text = item.category
         cell.layer.backgroundColor = UIColor.lightGray.cgColor
         
         if let imageURL = URL(string: item.imageURL){

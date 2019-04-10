@@ -14,6 +14,7 @@
 		ED38FB66225D06BA00B9596A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED38FB65225D06BA00B9596A /* Assets.xcassets */; };
 		ED38FB69225D06BA00B9596A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED38FB67225D06BA00B9596A /* LaunchScreen.storyboard */; };
 		ED38FB71225D074F00B9596A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED38FB70225D074F00B9596A /* GoogleService-Info.plist */; };
+		EDC0BE22225D666C0023ABCC /* AddItemForPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC0BE21225D666C0023ABCC /* AddItemForPointViewController.swift */; };
 		EDDA5AA2225D0CB90089F4E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA5AA1225D0CB90089F4E9 /* MapViewController.swift */; };
 		EDDA5AA4225D0CC60089F4E9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA5AA3225D0CC60089F4E9 /* AddItemViewController.swift */; };
 		EDDA5AA6225D18760089F4E9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA5AA5225D18760089F4E9 /* Item.swift */; };
@@ -32,6 +33,7 @@
 		ED38FB68225D06BA00B9596A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED38FB6A225D06BA00B9596A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED38FB70225D074F00B9596A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EDC0BE21225D666C0023ABCC /* AddItemForPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemForPointViewController.swift; sourceTree = "<group>"; };
 		EDDA5AA1225D0CB90089F4E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EDDA5AA3225D0CC60089F4E9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		EDDA5AA5225D18760089F4E9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				EDDA5AA1225D0CB90089F4E9 /* MapViewController.swift */,
 				EDDA5AA3225D0CC60089F4E9 /* AddItemViewController.swift */,
 				EDDA5AA9225D20B60089F4E9 /* ItemViewController.swift */,
+				EDC0BE21225D666C0023ABCC /* AddItemForPointViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				EDDA5AA8225D1B530089F4E9 /* ItemCell.swift in Sources */,
 				EDDA5AA4225D0CC60089F4E9 /* AddItemViewController.swift in Sources */,
 				EDDA5AA2225D0CB90089F4E9 /* MapViewController.swift in Sources */,
+				EDC0BE22225D666C0023ABCC /* AddItemForPointViewController.swift in Sources */,
 				ED38FB5F225D06B800B9596A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
